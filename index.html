@@ -1,0 +1,1423 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+ <title>
+  Ivory Theory Bridal - Anne
+ </title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=s
+wap" rel="stylesheet">
+ <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+ </script>
+ <meta>
+ 
+ <title>
+  Bridal Shop
+ </title>
+ <style>
+  body {
+  font-family: 'Georgia', serif;
+  margin: 0;
+  background-color: #fff;
+  color: #333;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+}
+.logo {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+.logo span {
+  display: block;
+  font-size: 0.8em;
+  color: #666;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+.banner {
+  background: #a792b7 url('https://via.placeholder.com/1200x200') no-repeat center;
+  background-size: cover;
+  padding: 60px 30px;
+  color: white;
+  text-align: center;
+}
+.banner-content h1 {
+  font-size: 2.2em;
+  margin-bottom: 10px;
+}
+.notice {
+  background-color: #a792b7;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 0.9em;
+}
+.container {
+  display: flex;
+  padding: 30px;
+}
+.sidebar {
+  width: 250px;
+  margin-right: 30px;
+  text-align:left;
+}
+.sidebar h3 {
+  margin-bottom: 10px;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+.sidebar input,
+.sidebar select {
+  /*width: 100%;*/
+  padding: 8px;
+  margin-bottom: 10px;
+  font-size: 0.9em;
+}
+.categories ul {
+  list-style: none;
+  padding: 0;
+}
+.categories li {
+  margin-bottom: 8px;
+  cursor: pointer;
+  color: #555;
+}
+.categories li:hover{
+  margin-bottom: 8px;
+  cursor: pointer;
+  color: #1d1d1d;
+}
+.categories li:hover .chevron-right{
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid #1d1d1d;
+    border-bottom: 2px solid #1d1d1d;
+    transform: rotate(-45deg);
+    transition: transform 0.3s ease;
+    margin-left: 10px;
+    position: relative;
+    top: 0;
+    float: right;
+}
+.products {
+  flex: 1;
+}
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  width: 100%;
+}
+.product {
+  width: 250px;
+  text-align: center;
+padding:10px;
+margin: 10px;
+transition: 250ms;
+}
+.product:hover{
+transform: scale(1.1);
+box-shadow: 0 0 11px rgba(33,33,33,.2);
+border: 3px #800080;
+background-color: white;
+border-radius: 5px;
+transition-delay: .5s;
+transition: transform .4s ease-in-out;
+border: solid 3px #afa3c2;
+}
+.product img {
+  width: 100%;
+  border: 1px solid #ccc;
+}
+.product h4 {
+  margin: 10px 0 5px;
+  font-size: 1em;
+}
+.product p {
+  font-size: 0.9em;
+  color: #666;
+  margin: 0;
+}
+.product span {
+  display: block;
+  margin-top: 5px;
+  color: #9b84c1;
+  font-weight: bold;
+}
+  * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background-color: #fff;
+      color: #333;
+      padding: 0 1rem;
+    }
+    .header {
+      background-color: #d5c3e0;
+      color: #fff;
+      text-align: center;
+      padding: 0.5rem 0;
+      font-size: 0.9rem;
+      padding:15px;
+    }
+    .back-button {
+        margin: 1rem 0;
+        text-align: center;
+        width: auto;
+        position: relative;
+        left: -550px;
+    }
+    .back-button a {
+      text-decoration: none;
+      color: #aa82c5;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .image-section {
+      flex: 1 1 50%;
+    }
+    .main-image {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .thumbnail-row {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .thumbnail-row img {
+      width: 70px;
+      height: 100px;
+      object-fit: cover;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .product-info {
+      flex: 1 1 40%;
+      text-align: left;
+    }
+    .brand {
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      color: #555;
+    }
+    h1 {
+      margin-top: 0.5rem;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+    .price {
+      margin: 1rem 0;
+      font-size: 1.5rem;
+      color: #aa82c5;
+    }
+    .desc {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      color: #666;
+    }
+    .options,
+    .size-select,
+    .quantity-select,
+    .shipping-option {
+      margin: 1rem 0;
+    }
+    select,
+    button {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+    button {
+      background-color: #c4afd6;
+      color: #fff;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .store-pickup {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .description {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+    .sku {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .thumbnail-row {
+        justify-content: center;
+      }
+    }
+   /*  -----------pagination--------------*/
+    .pagination {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+      background: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      /*box-shadow: 0 0 8px rgba(0,0,0,0.1);*/
+    }
+    .pagination a,
+    .pagination span {
+      padding: 8px 14px;
+      text-decoration: none;
+      color: #333;
+      background-color: #eee;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    .pagination a:hover {
+      background-color: #ccc;
+    }
+    .pagination .active {
+      background-color: #A18CC1;
+      color: white;
+      pointer-events: none;
+    }
+    .pagination .disabled {
+      pointer-events: none;
+      opacity: 0.4;
+    }
+    .pagination .ellipsis {
+      pointer-events: none;
+      background: transparent;
+    }
+    /* Responsive: Hide some page numbers on smaller screens */
+    @media (max-width: 600px) {
+      .pagination a:not(.prev):not(.next):not(.active):not(:nth-child(3)):not(:last-child),
+      .pagination span.ellipsis {
+        display: none;
+      }
+    }
+ /*  -----------Size Selector--------------*/
+.size-selector {
+      max-width: 400px;
+      margin: auto;
+    }
+    .size-selector h4 {
+      margin-bottom: 16px;
+      font-size: 20px;
+      color: #333;
+      font-weight: semibold;
+    }
+    .sizes {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .size-option {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+      background-color: white;
+      color:#A18CC1 !important;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      user-select: none;
+    }
+    .size-option:hover {
+      border-color: #A18CC1;
+      background-color:#A18CC1;
+      color:white !important;
+    }
+    .size-option:active {
+      border-color: #A18CC1;
+      background-color:#A18CC1;
+      color:white !important;
+    }
+    .size-option.selected {
+      background-color: #A18CC1;
+      color:white !important;
+      border-color: #A18CC1;
+    }
+    @media (max-width: 500px) {
+      .size-option {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+      }
+    }
+    /*  -----------Quantity--------------*/
+      .quantity-wrapper {
+      display: flex;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+    .quantity-input {
+      width: 40px !important;
+      padding: 6px;
+      font-size: 16px;
+      text-align: center;
+    border-color: #A18CC1 !important;
+      border-radius: 6px;
+      -moz-appearance: textfield;
+    }
+    /* Remove spinners in some browsers */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    .quantity-label {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+  /*  -----------Sort by--------------*/
+   .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      background: #fff;
+      border-radius: 10px;
+      position: relative;
+      top: -30px;
+      float: right;
+    }
+/* result count */
+    .result-count {
+      font-size: 14px;
+      color: #333;
+      border-radius: 8px;
+      text-align: left;
+    }
+    /* categories selected */
+    .selected-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+.category-tag {
+  background-color: #e0e0e0;
+  color: #333;
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  position: relative;
+}
+.remove-tag {
+  margin-left: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.3s;
+}
+.filter-actions {
+  /*margin: 20px;*/
+  margin-top:10px;
+  margin-left:10px;
+}
+.clear-filter-btn {
+  background-color: transparent;
+  color: #333;
+  /*padding: 8px 14px;*/
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.clear-filter-btn i {
+  color: #f44336;
+  transition: color 0.3s ease;
+}
+/*.clear-filter-btn:hover {*/
+/*  background-color: #e0e0e0;*/
+/*}*/
+.clear-filter-btn:hover i {
+  color: #d32f2f;
+}
+.remove-tag:hover {
+  color: #f44336;
+}
+/* shipping options */
+.filter-options {
+  font-family: 'Georgia', serif;
+  color: #2f3a4b;
+  max-width: 250px;
+  padding: 10px 0;
+}
+.filter-header {
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+}
+.arrow {
+  font-size: 12px;
+  color: #d3d3d3;
+}
+.checkbox-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.checkbox-list li {
+  margin: 10px 0;
+}
+.checkbox-list input[type="checkbox"] {
+  margin-right: 8px;
+  transform: scale(1.2);
+  accent-color: #aa82c5;
+}
+/* collapse */
+   .collapsible-container {
+      border-bottom: 2px solid #eceff1;
+      max-width: 400px;
+      position: relative;
+    }
+    .collapsible-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      color: #404759;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 18px;
+      padding-bottom: 10px;
+      padding-top: 10px;
+    }
+    .chevron {
+      width: 10px;
+      height: 10px;
+      border-right: 2px solid #cfd8dc;
+      border-bottom: 2px solid #cfd8dc;
+      transform: rotate(45deg);
+      transition: transform 0.3s ease;
+      margin-left: 10px;
+    }
+    .active .chevron {
+      transform: rotate(-135deg);
+    }
+    .chevron-right {
+      width: 10px;
+      height: 10px;
+      border-right: 2px solid #cfd8dc;
+      border-bottom: 2px solid #cfd8dc;
+      transform: rotate(-45deg);
+      transition: transform 0.3s ease;
+      margin-left: 10px;
+      position: relative;
+      top: 0;
+      float: right;
+    }
+    .collapsible-content {
+      display: none;
+      padding-top: 10px;
+      font-size: 16px;
+      color: #333;
+    }
+    .active + .collapsible-content {
+      display: block;
+    }
+/* Description and Reviews */    
+    .menu-tabs {
+     margin: 0 300px;
+    }
+    .tab {
+      overflow: hidden;
+      border-bottom: 2px solid #eee;
+    }
+    /* Style the buttons that are used to open the tab content */
+    .tab button {
+      padding: 10px 0;
+      margin-right: 30px;
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      color: #aaa;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      position: relative;
+      transition: 0.3s;
+      width: 300px;
+    }
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+      background-color: transparent;
+      color: #9b8cb8;
+    }
+    /* Create an active/current tablink class */
+    .tab button.active {
+        color: #9b8cb8;
+        background-color: transparent;
+        border-bottom: 2px solid #9b8cb8;
+        border-radius: 0;
+    }
+    /* Style the tab content */
+    .tabcontent {
+      display: none;
+      padding: 6px 12px;
+      border-top: none;
+      margin-top: 2em;
+    }
+    /* add to cart button*/
+    .add-cart{
+        width: 180px;
+    }
+    .add-cart:hover{
+        background-color:#696274;
+    }
+    /* page 2 shipping-option */
+       .option {
+      margin-bottom: 20px;
+    }
+    label {
+      font-size: 20px;
+      color: #333;
+    }
+    .address {
+      margin-left: 30px;
+      font-style: italic;
+      color: #666;
+      font-size: 18px;
+    }
+    input[type="radio"] {
+      margin-right: 10px;
+      transform: scale(1.3);
+       accent-color:#aa82c5; 
+    }
+    input[type="radio"]:checked + label::before {
+    background-color: #aa82c5; /* Your selected color */
+    border-color: #aa82c5;}
+    /* Option thumbnail-selection */
+   .option-img{
+    width: 50px;
+    padding: 5px;
+    border: solid 2px #c4afd6;
+    border-radius: 5px;
+   }
+   /* Image Gallery */    
+   /*  .gallery {
+      max-width: 400px;
+      text-align: center;
+    }
+    .main-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    .thumbnails {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+    .thumbnails img {
+      width: 60px;
+      height: 90px;
+      object-fit: cover;
+      cursor: pointer;
+      border: 2px solid transparent;
+      border-radius: 6px;
+      transition: border 0.3s;
+    }
+    .thumbnails img.active {
+      border-color: #333;
+    } */
+     #loader {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(255, 255, 255, 0.8);
+        display: flex; align-items: center; justify-content: center;
+        z-index: 9999;
+      }
+      .spinner {
+        width: 40px;
+        height: 40px;
+        border: 5px solid #ccc;
+        border-top: 5px solid #333;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+      .prodcolor{
+        background-color: #aa82c5 !important;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        margin-right: 5px;
+        line-height: 3;
+        white-space: pre;
+        font-size: .8em;
+      }
+ </style>
+ <!-- Product List View -->
+ <div id="product-list-view">
+  <main class="container">
+   <aside class="sidebar">
+    <!-- categories selected -->
+    <!-- <div class="selected-categories">
+     <div class="category-tag">
+      Clothing
+      <span class="remove-tag" onclick="removeTag(this)">
+       ×
+      </span>
+     </div>
+     <div class="category-tag">
+      Shoes
+      <span class="remove-tag" onclick="removeTag(this)">
+       ×
+      </span>
+     </div>
+     <div class="category-tag">
+      Accessories
+      <span class="remove-tag" onclick="removeTag(this)">
+       ×
+      </span>
+     </div>
+     <div class="filter-actions">
+      <button class="clear-filter-btn">
+       <i class="fas fa-times-circle">
+       </i>
+       Clear Filter
+      </button>
+     </div>
+    </div>-->
+    <!-- Filter Search -->
+    <div class="filter m-3">
+     <div class="collapsible-container">
+      <div class="collapsible-header" onclick="toggleCollapse(this)">
+       <span>
+        Filter
+       </span>
+       <div class="chevron">
+       </div>
+      </div>
+      <div class="collapsible-content">
+       <input type="text" placeholder="Type to filter" id="txt-search">
+      </div>
+     </div>
+    </div>
+    <!-- Filter brands -->
+    <div class="filter m-3">
+     <div class="collapsible-container">
+      <div class="collapsible-header" onclick="toggleCollapse(this)">
+       <span>
+        Brands
+       </span>
+       <div class="chevron">
+       </div>
+      </div>
+      <div class="collapsible-content">
+       <select id="ddl-brands">
+       </select>
+      </div>
+     </div>
+    </div>
+    <!-- Filter Categories -->
+    <div class="filter m-3 categories">
+     <div class="collapsible-container">
+      <div class="collapsible-header" onclick="toggleCollapse(this)">
+       <span>
+        Categories
+       </span>
+       <div class="chevron">
+       </div>
+      </div>
+      <div class="collapsible-content">
+       <ul id="list-categories">
+       </ul>
+      </div>
+     </div>
+    </div>
+    <!-- Filter Sizes -->
+    <!--<div class="filter m-3 categories">-->
+    <!-- <div class="collapsible-container">-->
+    <!--  <div class="collapsible-header" onclick="toggleCollapse(this)">-->
+    <!--   <span>-->
+    <!--    Sizes-->
+    <!--   </span>-->
+    <!--   <div class="chevron">-->
+    <!--   </div>-->
+    <!--  </div>-->
+    <!--  <div class="collapsible-content">-->
+    <!--   <span>-->
+    <!--    <div class="sizes">-->
+    <!--     <div class="size-option">-->
+    <!--      36-->
+    <!--     </div>-->
+    <!--     <div class="size-option">-->
+    <!--      37-->
+    <!--     </div>-->
+    <!--     <div class="size-option">-->
+    <!--      38-->
+    <!--     </div>-->
+    <!--     <div class="size-option">-->
+    <!--      39-->
+    <!--     </div>-->
+    <!--     <div class="size-option">-->
+    <!--      40-->
+    <!--     </div>-->
+    <!--     <div class="size-option">-->
+    <!--      41-->
+    <!--     </div>-->
+    <!--     <div class="size-option">-->
+    <!--      42-->
+    <!--     </div>-->
+    <!--     <div class="size-option">-->
+    <!--      43-->
+    <!--     </div>-->
+    <!--     <div class="size-option">-->
+    <!--      44-->
+    <!--     </div>-->
+    <!--    </div>-->
+    <!--   </span>-->
+    <!--  </div>-->
+    <!-- </div>-->
+    <!--</div>-->
+    <!-- Filter Options -->
+    <!--<div class="filter m-3 categories">-->
+    <!-- <div class="collapsible-container">-->
+    <!--  <div class="collapsible-header" onclick="toggleCollapse(this)">-->
+    <!--   <span>-->
+    <!--    Options-->
+    <!--   </span>-->
+    <!--   <div class="chevron">-->
+    <!--   </div>-->
+    <!--  </div>-->
+    <!--  <div class="collapsible-content">-->
+    <!--   <ul class="checkbox-list">-->
+    <!--    <li>-->
+    <!--     <label>-->
+    <!--      <input type="checkbox">-->
+    <!--      Ship To Me-->
+    <!--     </label>-->
+    <!--    </li>-->
+    <!--    <li>-->
+    <!--     <label>-->
+    <!--      <input type="checkbox">-->
+    <!--      Pickup In-Store-->
+    <!--     </label>-->
+    <!--    </li>-->
+    <!--    <li>-->
+    <!--     <label>-->
+    <!--      <input type="checkbox">-->
+    <!--      On Sale Items-->
+    <!--     </label>-->
+    <!--    </li>-->
+    <!--   </ul>-->
+    <!--  </div>-->
+    <!-- </div>-->
+    <!--</div>-->
+    <!-- Filter Policy -->
+    <!--<div class="filter m-3 categories">-->
+    <!-- <div class="collapsible-container">-->
+    <!--  <div class="collapsible-header" onclick="toggleCollapse(this)">-->
+    <!--   <span>-->
+    <!--    Return Policy-->
+    <!--   </span>-->
+    <!--   <div class="chevron">-->
+    <!--   </div>-->
+    <!--  </div>-->
+    <!--  <div class="collapsible-content">-->
+    <!--   <span>-->
+    <!--    Due to the nature of our inventory, all sales are final. No returns or exchanges.-->
+    <!--   </span>-->
+    <!--  </div>-->
+    <!-- </div>-->
+    <!--</div>-->
+   </aside>
+   <section class="products">
+    <div class="result-count">
+     <strong id="label-result-count">
+      0
+     </strong>
+     results
+    </div>
+    <div class="controls">
+     <div class="control-group">
+      <label for="sort">
+      </label>
+      <select id="sort" name="sort">
+       <option value="default">
+        Sort By
+       </option>
+       <option value="price-asc">
+        Price: Low to High
+       </option>
+       <option value="price-desc">
+        Price: High to Low
+       </option>
+       <option value="name-asc">
+        Name: A to Z
+       </option>
+       <option value="name-desc">
+        Name: Z to A
+       </option>
+      </select>
+     </div>
+    </div>
+    <br>
+    <div id="loader" style="display: none !important;">
+     <div class="spinner">
+     </div>
+    </div>
+    <div class="grid" id="list-products">
+     <!-- Add more products here -->
+    </div>
+    <div class="pagination" id="list-paging">
+    </div>
+   </section>
+  </main>
+ </div>
+ <!-- Product Detail View -->
+ <div id="product-detail-view" style="display:none;">
+  <div id="product-detail-content">
+  </div>
+ </div>
+ <script>
+  function showProduct(productId,vendorId,departmentId) {
+        const locationID = '3d97dcf1';
+      //const productId = productId;
+      //alert(vendorId);
+      //alert(departmentId);
+        getInnerDetails(locationID,productId);
+      //alert(productId);
+      document.getElementById('product-list-view').style.display = 'none';
+      document.getElementById('product-detail-view').style.display = 'block';
+      // Define a content object dynamically using bracket notation
+      const content = {};
+      content[productId] = `
+        <div class="back-button">
+            <a href="javascript:void(0)" onclick="goBack()">← BACK</a>
+          </div>
+          <div class="container">
+            <div class="image-section">
+              <img id="product-main-image" class="main-image" src="" alt="Main Product Image">
+              <div class="thumbnail-row" id="list-images">
+              </div>
+            </div>
+            <div class="product-info">
+              <div class="brand"> <span id="product-brand"></span> -  <span id="product-category"></span> - <span id="product-color"> </span> </div>
+              <h1 id="product-name" >ANNE</h1>
+              <div class="price"><strong><span id="product-price-sale"></span></strong> <span style="font-size: 0.9rem; color: #888;">USD</span></div>
+              <div class="price" id="orig-price"><span  id="product-price-orig" style="text-decoration: line-through"></span> <span style="font-size: 0.9rem; color: #888;">USD    (Original Price)</span></div>
+              <div hidden id="product-descr" class="desc">Ethereal beaded & fitted gown with straps in a light and lovely ivory crepe.</div>
+              <div class="options"><strong>AVAILABLE COLORS</strong></div>
+               <div class"option-select" id="list-color">
+               <img hidden class="option-img" src="https://irt-cdn.multiscreensite.com/612903d8e3464cf0aaf1abc3fd131900/dms3rep/multi/dress1.jpg" alt="Thumb1">
+                </div> 
+                <br/>
+                <div class="options"><strong>AVAILABLE SIZES</strong> </div>
+                  <div class="sizes" id="opt-size">
+                  </div>
+                  <br/>
+                  <div class="options"><strong>AVAILABLE STOCKS</strong></div>
+                   <span id="product-stocks"></span>
+                  <br/>
+                     <div class="filter m-3">
+                         <div class="collapsible-container">
+                          <div class="collapsible-header" onclick="toggleCollapse(this)">
+                           <span>
+                          <strong>DESCRIPTION</strong> 
+                           </span>
+                           <div class="chevron">
+                           </div>
+                          </div>
+                          <div class="collapsible-content">
+                            <p id="product-descr-tab">This is the product description content.</p>
+                          </div>
+                         </div>
+                        </div>
+                       <div class="filter m-3">
+                         <div class="collapsible-container">
+                          <div class="collapsible-header" onclick="toggleCollapse(this)">
+                           <span>
+                          <strong>REVIEWS</strong> 
+                           </span>
+                           <div class="chevron">
+                           </div>
+                          </div>
+                          <div class="collapsible-content">
+                          <p>This product has not been reviewed. Please login to leave the first!</p>
+                          </div>
+                         </div>
+                        </div>
+              <div class="sku">SKU: <span id="product-id">14228356</span></div>
+            </div>
+          </div>
+         <div class="menu-tabs" hidden>
+              <div class="tab">
+                  <button class="tablinks" onclick="openMenu(event, 'Description')">Description</button>
+                  <button class="tablinks" onclick="openMenu(event, 'Reviews')">Reviews</button>
+                </div>
+                <!-- Tab content -->
+                <div id="Description" class="tabcontent">
+                  <p id="product-descr-tab">This is the product description content.</p>
+                </div>
+            </div>
+          <div class="container description" hidden>
+            <div hidden>A sexy classic fit-to-flare with delicate beading on the straps and bodice. Light ivory crepe.</div><br>
+            <div style="margin-top: 1rem;" hidden>
+              <a href="#" style="color: #aa82c5; text-decoration: underline;">Ivory Theory Bridal Size Chart</a>
+            </div>
+          </div>
+      `;
+      document.getElementById('product-detail-content').innerHTML = content[productId];
+    }
+    function goBack() {
+      document.getElementById('product-detail-view').style.display = 'none';
+      document.getElementById('product-list-view').style.display = 'block';
+    }
+ </script>
+ <script>
+  $( document ).ready(function() {
+      const locationID = '3d97dcf1';
+      const itemID = 1755799;
+         getCategories(locationID);
+         getBrands(locationID);
+         //getProducts(locationID);
+         getAllProducts(locationID);
+         $('.page-item').on('click', function() {
+              alert("Page no:");
+              //const page = $(this).data('page');
+              //  alert("Page no:" + page);
+            });
+            // Delegated pagination click events
+            $('#list-paging').on('click', '.page-item', function (e) {
+                e.preventDefault();
+                const selectedPage = parseInt($(this).data('page'));
+                if (!isNaN(selectedPage) && selectedPage !== currentPage) {
+                    getProducts(locationID, selectedPage); // assumes currentLocationID is set
+                }
+            });
+            $('#list-paging').on('click', '.prev:not(.disabled)', function (e) {
+                e.preventDefault();
+                if (currentPage > 1) {
+                    getProducts(locationID, currentPage - 1);
+                }
+            });
+            $('#list-paging').on('click', '.next:not(.disabled)', function (e) {
+                e.preventDefault();
+                getProducts(locationID, currentPage + 1);
+            });
+            $('#ddl-brands').on('change', function () {
+                const vendorId = $(this).val();
+                activeVendorId = $(this).val();
+                applyFilters();
+                if (vendorId) {
+                    filterByVendorId(vendorId);
+                } else {
+                    showAllProducts();
+                }
+            });
+            $('#txt-search').on('input', function () {
+                activeSearchText = $(this).val().trim().toLowerCase();
+                applyFilters();
+            });
+            $('#sort').on('change', function () {
+                activeSortOption = $(this).val();
+                applyFilters();
+            });
+           /* const thumbnails = document.querySelectorAll('.thumbnails img');
+            const mainImage = document.getElementById('currentImage');
+            let index = 0;
+                // Auto-slide every 3 seconds
+            setInterval(() => {
+              index = (index + 1) % thumbnails.length;
+              showImage(index);
+            }, 3000);
+            // Manual click override
+            thumbnails.forEach((thumb, i) => {
+              thumb.addEventListener('click', () => {
+                index = i;
+                showImage(index);
+              });
+            });*/
+      });
+      $(document).on('click', '.product', function () {
+            const id = $(this).data('id');
+            const vendorId = $(this).data('vendor');
+            const departmentId = $(this).data('department');
+            showProduct(id, vendorId, departmentId);
+        });
+      function getInnerDetails(locationID, itemID) {
+            const url = `https://api.welcomemat.com/latest/bridallive/items/${locationID}/${itemID}`;
+            const fallbackImage = "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg";
+            $.ajax({
+                url: url,
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                    // Set text fields
+                    $("#product-name").text(data.name || "N/A");
+                    if (data.salePrice == "" || data.salePrice == null ) {
+                        $("#orig-price").hide();
+                    }
+                    $("#product-price-orig").text(data.regularPrice ? `$${data.regularPrice}` : "Price Unavailable");
+                    $("#product-price-sale").text(data.salePrice ? `$${data.salePrice}` : `$${data.regularPrice}`);
+                    $("#product-descr").text(data.description || "No description.");
+                    $("#product-descr-tab").text(data.description || "No description.");
+                    $("#product-color").text(data.color || "N/A");
+                    $("#product-id").text(data.itemNumber || "N/A");
+                    $("#product-stocks").text(data.quantityInStock || "N/A");
+                    $("#product-brand").text(data.vendorName || "N/A");
+                    $("#product-category").text(data.departmentName || "N/A");
+                    // Set main image with fallback
+                    const mainImageUrl = data.additionalImage1;
+                    $("#product-main-image").attr("src", mainImageUrl);
+                    // Clear and append size
+                    $("#opt-size").empty();
+                    if (data.size) {
+                        $("#opt-size").append(`<div class="size-option" data-id="${data.size}">${data.size}</div>`);
+                    }
+                    // Clear and append additional images
+                    $("#list-images").empty();
+                    if (Array.isArray(data.pictures)) {
+                        data.pictures.forEach(function (img) {
+                            const imageUrl = img.imageUrl || fallbackImage;
+                            $("#list-images").append(`
+                                <img src="${imageUrl}"
+                                     alt="${img.itemId || 'product image'}">
+                            `);
+                        });
+                    }
+                    const colorStrings = data.colorString;
+                    const values = colorStrings.split(',');
+                    values.forEach((value, index) => {
+                      console.log(`${index + 1}. ${value}`);
+                      $("#list-color").append(`
+                                <span class="prodcolor">${value} </span>
+                            `);
+                    });
+                },
+                error: function (xhr, status, error) {
+                    console.error("AJAX error:", status, error);
+                }
+            });
+        }
+      function getCategories(locationID){
+        //alert(itemID);
+        const url = "https://api.welcomemat.com/latest/bridallive/items/categories/"+ locationID;
+        $.ajax({
+                url: url,
+                type: "GET",
+                dataType: "json", // Expected data type from the server
+                success: function(data) {
+                    $('#list-categories').empty();
+                    $('#list-categories').append(`<li data-id="">All Categories</li>`); // Add reset option
+                    data.departments.forEach(function (dept) {
+                        $('#list-categories').append(`<li data-id="${dept.id}">${dept.name} <div class="chevron-right"></div></li>`);
+                    });
+                },
+                error: function(xhr, status, error) {
+                    // Handle errors
+                    console.error("AJAX error:", status, error);
+                }
+            });
+      }
+      $(document).on('click', '#list-categories li', function () {
+            activeCategoryId = $(this).data('id') || '';
+            applyFilters();
+            // Optional: highlight the selected category
+            $('#list-categories li').removeClass('active');
+            $(this).addClass('active');
+        });
+      function getBrands(locationID){
+        //alert(itemID);
+        const url = "https://api.welcomemat.com/latest/bridallive/items/categories/"+ locationID;
+        $.ajax({
+                url: url,
+                type: "GET",
+                dataType: "json", // Expected data type from the server
+                success: function(data) {
+                     data.vendors.forEach(function (ven) {
+                          $('#ddl-brands').append(`<option id=${ven.id} value="${ven.id}">${ven.name}</option>`);
+                        });
+                },
+                error: function(xhr, status, error) {
+                    // Handle errors
+                    console.error("AJAX error:", status, error);
+                }
+            });
+      }
+        let fullProductList = [];
+        let filteredProducts = [];
+        let currentPage = 1;
+        const pageSize = 10;
+        const maxVisiblePages = 10;
+        let activeVendorId = '';
+        let activeSearchText = '';
+        let activeCategoryId = '';
+        let activeSortOption = 'default';
+        /*function getProducts(locationID, page = 1) {
+            const url = `https://api.welcomemat.com/latest/bridallive/items/${locationID}`;
+            $.ajax({
+                url: url,
+                type: "POST",
+                data: JSON.stringify({
+                    status: "A",
+                    size: pageSize,
+                    page: page
+                }),
+                contentType: "application/json",
+                dataType: "json",
+                success: function (data) {
+                    const itemsCount = data.total || 0;
+                    const pageCount = Math.ceil(itemsCount / pageSize);
+                    currentPage = page;
+                    $('#label-result-count').text(itemsCount);
+                    allProducts = data.result;
+                    fullProductList = [...fullProductList, ...data.result]; // optional: store for future filtering
+                    if (activeVendorId) {
+                        filterByVendorId(activeVendorId);
+                    } else {
+                        renderProducts(allProducts);
+                    }
+                    renderPagination(currentPage, pageCount);
+                },
+                error: function (xhr, status, error) {
+                    console.error("AJAX error:", status, error);
+                }
+            });
+        }*/
+        // Fetch all products from all pages
+        function getAllProducts(locationID) {
+            const url = `https://api.welcomemat.com/latest/bridallive/items/${locationID}`;
+            fullProductList = [];
+            $('#loader').show();
+            function fetchPage(p) {
+                return $.ajax({
+                    url: url,
+                    type: "POST",
+                    data: JSON.stringify({ status: "A", size: pageSize, page: p }),
+                    contentType: "application/json",
+                    dataType: "json"
+                });
+            }
+            fetchPage(1).done(function (data) {
+                const totalItems = data.total || 0;
+                const pageCount = Math.ceil(totalItems / pageSize);
+                fullProductList = [...data.result];
+                const requests = [];
+                for (let i = 2; i <= pageCount; i++) {
+                    requests.push(fetchPage(i));
+                }
+                $.when(...requests).done(function (...responses) {
+                    responses.forEach(res => {
+                        const pageData = Array.isArray(res) ? res[0] : res;
+                        fullProductList = fullProductList.concat(pageData.result);
+                    });
+                    // Show all products initially
+                    filteredProducts = [];
+                    currentPage = 1;
+                    renderPagedProducts(fullProductList, currentPage);
+                    renderPagination(currentPage, Math.ceil(fullProductList.length / pageSize));
+                     $('#loader').hide();
+                });
+            });
+        }
+        // Show all products
+        function showAllProducts() {
+            $('#loader').show();
+            filteredProducts = [];
+            currentPage = 1;
+            renderPagedProducts(fullProductList, currentPage);
+            renderPagination(currentPage, Math.ceil(fullProductList.length / pageSize));
+            $('#loader').hide();
+        }
+        /*function filterByVendorId(vendorId) {
+            const filtered = allProducts.filter(prod => prod.vendorId === vendorId);
+            renderProducts(filtered);
+        }*/
+       // Filter by vendor ID
+        function filterByVendorId(vendorId) {
+            $('#loader').show();
+            filteredProducts = fullProductList.filter(prod => String(prod.vendorId) === String(vendorId));
+            currentPage = 1;
+            renderPagedProducts(filteredProducts, currentPage);
+            renderPagination(currentPage, Math.ceil(filteredProducts.length / pageSize));
+            $('#loader').hide();
+        }
+        function applyFilters() {
+            currentPage = 1;
+            // 1. Filter
+            filteredProducts = fullProductList.filter(prod => {
+                const matchesVendor = !activeVendorId || String(prod.vendorId) === String(activeVendorId);
+                const matchesSearch = !activeSearchText || prod.name.toLowerCase().includes(activeSearchText);
+                const matchesCategory = !activeCategoryId || String(prod.departmentId) === String(activeCategoryId);
+                return matchesVendor && matchesSearch && matchesCategory;
+            });
+            // 2. Sort
+            filteredProducts.sort((a, b) => {
+                switch (activeSortOption) {
+                    case 'price-asc':
+                        return parseFloat(a.regularPrice) - parseFloat(b.regularPrice);
+                    case 'price-desc':
+                        return parseFloat(b.regularPrice) - parseFloat(a.regularPrice);
+                    case 'name-asc':
+                        return a.name.localeCompare(b.name);
+                    case 'name-desc':
+                        return b.name.localeCompare(a.name);
+                    default:
+                        return 0; // no sort
+                }
+            });
+            // 3. Paginate and render
+            renderPagedProducts(filteredProducts, currentPage);
+            renderPagination(currentPage, Math.ceil(filteredProducts.length / pageSize));
+        }
+        function renderProducts(products) {
+            $('#label-result-count').text(itemsCount);
+            $('#list-products').empty();
+            products.forEach(function (prod) {
+                $('#list-products').append(`
+                    <div id="${prod.id}" class="product" 
+                        data-id="${prod.id}" 
+                        data-vendor=${prod.vendorId}
+                        data-department="${prod.departmentId}">
+                        <img alt="${prod.name}" src="${prod.coverImageUrl}">
+                        <h4>${prod.name}</h4>
+                        <p>${prod.color} ${prod.description}</p>
+                        <span>$ ${prod.regularPrice}</span>
+                    </div>
+                `);
+            });
+        }
+        // Render current page
+        function renderPagedProducts(sourceList, page) {
+            const start = (page - 1) * pageSize;
+            const end = start + pageSize;
+            const pagedItems = sourceList.slice(start, end);
+            $('#label-result-count').text(sourceList.length);
+            $('#list-products').empty();
+            pagedItems.forEach(prod => {
+                $('#list-products').append(`
+                    <div id="${prod.id}" class="product" 
+                        data-id="${prod.id}" 
+                        data-vendor="${prod.vendorId}"
+                        data-department="${prod.departmentId}">
+                        <img alt="${prod.name}" src="${prod.coverImageUrl}">
+                        <h4>${prod.name}</h4>
+                        <p>${prod.color} ${prod.description}</p>
+                        <span>$ ${prod.regularPrice}</span>
+                    </div>
+                `);
+            });
+        }
+        // Render pagination
+        function renderPagination(currentPage, pageCount) {
+            $('#list-paging').empty();
+            const isFirst = currentPage === 1;
+            const isLast = currentPage === pageCount;
+            $('#list-paging').append(`<a href="#" class="prev ${isFirst ? 'disabled' : ''}" data-page="${currentPage - 1}">«</a>`);
+            const group = Math.floor((currentPage - 1) / maxVisiblePages);
+            const startPage = group * maxVisiblePages + 1;
+            const endPage = Math.min(startPage + maxVisiblePages - 1, pageCount);
+            for (let i = startPage; i <= endPage; i++) {
+                const active = i === currentPage ? 'active' : '';
+                $('#list-paging').append(`<a href="#" class="page-item ${active}" data-page="${i}">${i}</a>`);
+            }
+            $('#list-paging').append(`<a href="#" class="next ${isLast ? 'disabled' : ''}" data-page="${currentPage + 1}">»</a>`);
+        }
+        // Pagination click handler
+        $(document).on('click', '#list-paging a', function (e) {
+            e.preventDefault();
+            const $this = $(this);
+            if ($this.hasClass('disabled') || $this.hasClass('active')) return;
+            const page = parseInt($this.data('page'));
+            if (!isNaN(page)) {
+                currentPage = page;
+                const source = filteredProducts.length ? filteredProducts : fullProductList;
+                renderPagedProducts(source, currentPage);
+                renderPagination(currentPage, Math.ceil(source.length / pageSize));
+            }
+        });
+        // <- collapse function
+        function toggleCollapse(headerElement) {
+          // Toggle 'active' class on header
+          headerElement.classList.toggle('active');
+          // Get the next sibling (.collapsible-content)
+          const content = headerElement.nextElementSibling;
+          if (content && content.classList.contains('collapsible-content')) {
+            if (content.style.display === 'block') {
+              content.style.display = 'none';
+            } else {
+              content.style.display = 'block';
+            }
+          }
+        }
+        function openMenu(evt, tabName) {
+          // Declare all variables
+          var i, tabcontent, tablinks;
+          // Get all elements with class="tabcontent" and hide them
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          // Get all elements with class="tablinks" and remove the class "active"
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          // Show the current tab, and add an "active" class to the button that opened the tab
+          document.getElementById(tabName).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+        /*function showImage(i) {
+          mainImage.src = thumbnails[i].src;
+          thumbnails.forEach(img => img.classList.remove('active'));
+          thumbnails[i].classList.add('active');
+        }*/
+ </script>
