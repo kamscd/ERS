@@ -1,7 +1,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
  <title>
-  Ivory Theory Bridal - Anne
+  ERS Duda Widget
  </title>
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=s
@@ -9,10 +9,7 @@ wap" rel="stylesheet">
  <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.min.js">
  </script>
  <meta>
- 
- <title>
-  Bridal Shop
- </title>
+
  <style>
   body {
   font-family: 'Georgia', serif;
@@ -641,37 +638,6 @@ border: solid 3px #afa3c2;
     border: solid 2px #c4afd6;
     border-radius: 5px;
    }
-   /* Image Gallery */    
-   /*  .gallery {
-      max-width: 400px;
-      text-align: center;
-    }
-    .main-image img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: 0.3s;
-    }
-    .thumbnails {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 15px;
-      flex-wrap: wrap;
-    }
-    .thumbnails img {
-      width: 60px;
-      height: 90px;
-      object-fit: cover;
-      cursor: pointer;
-      border: 2px solid transparent;
-      border-radius: 6px;
-      transition: border 0.3s;
-    }
-    .thumbnails img.active {
-      border-color: #333;
-    } */
      #loader {
         position: fixed;
         top: 0; left: 0;
@@ -701,39 +667,111 @@ border: solid 3px #afa3c2;
         white-space: pre;
         font-size: .8em;
       }
+     .carousel-container {
+          position: relative;
+          width: 90%;
+          max-width: 960px;
+          margin: 40px auto;
+          overflow: hidden;
+        }
+
+        .carousel-track {
+          display: flex;
+          gap: 10px;
+          transition: transform 0.5s ease;
+        }
+
+        .carousel-item {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          width: calc((100% / 6) - 10px);
+          flex-shrink: 0;
+          text-align: center;
+          height: 200px; /* ✅ Set fixed height */
+          box-sizing: border-box;
+          border: 1px solid #c9c8c8;
+          border-radius: 7px;
+          padding: 10px;
+          margin: 5px;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          cursor: pointer;
+        }
+
+        .carousel-item:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+          border: 2px solid #c9c8c8;
+        }
+
+        .carousel-item img {
+          width: 100%;
+          height: 150px;       /* ✅ Fixed image height */
+          object-fit: contain;   /* ✅ Maintain aspect ratio */
+          border-radius: 5px;
+        }
+
+        .image-title {
+          font-size: 14px;
+          color: #333;
+          padding: 5px 0;
+        }
+
+        .carousel-buttons {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          right: 0;
+          display: flex;
+          justify-content: space-between;
+          padding: 0 10px;
+          transform: translateY(-50%);
+        }
+
+        .carousel-buttons button {
+          background-color: rgba(0,0,0,0.5);
+          border: none;
+          color: white;
+          font-size: 2rem;
+          padding: 10px;
+          cursor: pointer;
+          border-radius: 5px;
+        }
+        .carousel-caret-left {
+          width: 50px;
+        }
+        .carousel-caret-right {
+          width: 50px;
+        }
+    @media (max-width: 1024px) {
+      .carousel-track img {
+        width: calc(100% / 4 - 10px);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .carousel-track img {
+        width: calc(100% / 2 - 10px);
+      }
+    }
  </style>
  <!-- Product List View -->
  <div id="product-list-view">
   <main class="container">
+    
+  <div class="carousel-container">
+    <div class="carousel-track-wrapper">
+      <div class="carousel-track" id="carouselTrack">
+        
+      </div>
+    </div>
+
+    <div class="carousel-buttons">
+      <button class="carousel-button carousel-caret-left" onclick="moveSlide(-1)">&#10094;</button>
+      <button class="carousel-button carousel-caret-right" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+  </div>
    <aside class="sidebar">
-    <!-- categories selected -->
-    <!-- <div class="selected-categories">
-     <div class="category-tag">
-      Clothing
-      <span class="remove-tag" onclick="removeTag(this)">
-       ×
-      </span>
-     </div>
-     <div class="category-tag">
-      Shoes
-      <span class="remove-tag" onclick="removeTag(this)">
-       ×
-      </span>
-     </div>
-     <div class="category-tag">
-      Accessories
-      <span class="remove-tag" onclick="removeTag(this)">
-       ×
-      </span>
-     </div>
-     <div class="filter-actions">
-      <button class="clear-filter-btn">
-       <i class="fas fa-times-circle">
-       </i>
-       Clear Filter
-      </button>
-     </div>
-    </div>-->
     <!-- Filter Search -->
     <div class="filter m-3">
      <div class="collapsible-container">
@@ -749,134 +787,7 @@ border: solid 3px #afa3c2;
       </div>
      </div>
     </div>
-    <!-- Filter brands -->
-    <div class="filter m-3">
-     <div class="collapsible-container">
-      <div class="collapsible-header" onclick="toggleCollapse(this)">
-       <span>
-        Brands
-       </span>
-       <div class="chevron">
-       </div>
-      </div>
-      <div class="collapsible-content">
-       <select id="ddl-brands">
-       </select>
-      </div>
-     </div>
-    </div>
-    <!-- Filter Categories -->
-    <div class="filter m-3 categories">
-     <div class="collapsible-container">
-      <div class="collapsible-header" onclick="toggleCollapse(this)">
-       <span>
-        Categories
-       </span>
-       <div class="chevron">
-       </div>
-      </div>
-      <div class="collapsible-content">
-       <ul id="list-categories">
-       </ul>
-      </div>
-     </div>
-    </div>
-    <!-- Filter Sizes -->
-    <!--<div class="filter m-3 categories">-->
-    <!-- <div class="collapsible-container">-->
-    <!--  <div class="collapsible-header" onclick="toggleCollapse(this)">-->
-    <!--   <span>-->
-    <!--    Sizes-->
-    <!--   </span>-->
-    <!--   <div class="chevron">-->
-    <!--   </div>-->
-    <!--  </div>-->
-    <!--  <div class="collapsible-content">-->
-    <!--   <span>-->
-    <!--    <div class="sizes">-->
-    <!--     <div class="size-option">-->
-    <!--      36-->
-    <!--     </div>-->
-    <!--     <div class="size-option">-->
-    <!--      37-->
-    <!--     </div>-->
-    <!--     <div class="size-option">-->
-    <!--      38-->
-    <!--     </div>-->
-    <!--     <div class="size-option">-->
-    <!--      39-->
-    <!--     </div>-->
-    <!--     <div class="size-option">-->
-    <!--      40-->
-    <!--     </div>-->
-    <!--     <div class="size-option">-->
-    <!--      41-->
-    <!--     </div>-->
-    <!--     <div class="size-option">-->
-    <!--      42-->
-    <!--     </div>-->
-    <!--     <div class="size-option">-->
-    <!--      43-->
-    <!--     </div>-->
-    <!--     <div class="size-option">-->
-    <!--      44-->
-    <!--     </div>-->
-    <!--    </div>-->
-    <!--   </span>-->
-    <!--  </div>-->
-    <!-- </div>-->
-    <!--</div>-->
-    <!-- Filter Options -->
-    <!--<div class="filter m-3 categories">-->
-    <!-- <div class="collapsible-container">-->
-    <!--  <div class="collapsible-header" onclick="toggleCollapse(this)">-->
-    <!--   <span>-->
-    <!--    Options-->
-    <!--   </span>-->
-    <!--   <div class="chevron">-->
-    <!--   </div>-->
-    <!--  </div>-->
-    <!--  <div class="collapsible-content">-->
-    <!--   <ul class="checkbox-list">-->
-    <!--    <li>-->
-    <!--     <label>-->
-    <!--      <input type="checkbox">-->
-    <!--      Ship To Me-->
-    <!--     </label>-->
-    <!--    </li>-->
-    <!--    <li>-->
-    <!--     <label>-->
-    <!--      <input type="checkbox">-->
-    <!--      Pickup In-Store-->
-    <!--     </label>-->
-    <!--    </li>-->
-    <!--    <li>-->
-    <!--     <label>-->
-    <!--      <input type="checkbox">-->
-    <!--      On Sale Items-->
-    <!--     </label>-->
-    <!--    </li>-->
-    <!--   </ul>-->
-    <!--  </div>-->
-    <!-- </div>-->
-    <!--</div>-->
-    <!-- Filter Policy -->
-    <!--<div class="filter m-3 categories">-->
-    <!-- <div class="collapsible-container">-->
-    <!--  <div class="collapsible-header" onclick="toggleCollapse(this)">-->
-    <!--   <span>-->
-    <!--    Return Policy-->
-    <!--   </span>-->
-    <!--   <div class="chevron">-->
-    <!--   </div>-->
-    <!--  </div>-->
-    <!--  <div class="collapsible-content">-->
-    <!--   <span>-->
-    <!--    Due to the nature of our inventory, all sales are final. No returns or exchanges.-->
-    <!--   </span>-->
-    <!--  </div>-->
-    <!-- </div>-->
-    <!--</div>-->
+    
    </aside>
    <section class="products">
     <div class="result-count">
@@ -1022,13 +933,19 @@ border: solid 3px #afa3c2;
     }
  </script>
  <script>
-  $( document ).ready(function() {
+  $(document ).ready(function() {
       const locationID = '3d97dcf1';
       const itemID = 1755799;
-         getCategories(locationID);
-         getBrands(locationID);
-         //getProducts(locationID);
-         getAllProducts(locationID);
+
+      const API_BASE = "https://jumpinjoypartyrentals.ourers.com";
+      const API_KEY = "31886fa9692619091af6968b043d9968ae18516858c665f491721d26381c96472590de1923a45cf9c87e0f9213024e838bcfdd8372229be9e29fee5c49bd2112$e5688d1b";
+      const API_TOKEN = "jumpinjoypartyrentals_23b2dd1533b32551f0f405927d23f9c9";
+         
+         //alert(API_BASE);
+
+         getCategories(API_BASE,API_KEY,API_TOKEN);
+         //getBrands(locationID);
+         //getAllProducts(locationID);
          $('.page-item').on('click', function() {
               alert("Page no:");
               //const page = $(this).data('page');
@@ -1147,25 +1064,49 @@ border: solid 3px #afa3c2;
                 }
             });
         }
-      function getCategories(locationID){
-        //alert(itemID);
-        const url = "https://api.welcomemat.com/latest/bridallive/items/categories/"+ locationID;
-        $.ajax({
-                url: url,
-                type: "GET",
-                dataType: "json", // Expected data type from the server
-                success: function(data) {
-                    $('#list-categories').empty();
-                    $('#list-categories').append(`<li data-id="">All Categories</li>`); // Add reset option
-                    data.departments.forEach(function (dept) {
-                        $('#list-categories').append(`<li data-id="${dept.id}">${dept.name} <div class="chevron-right"></div></li>`);
-                    });
-                },
-                error: function(xhr, status, error) {
-                    // Handle errors
-                    console.error("AJAX error:", status, error);
-                }
-            });
+     function getCategories(API_BASE, API_KEY, API_TOKEN) {
+          const url = API_BASE + "/api/read/categories/";
+
+          // Create FormData manually
+          const formData = new FormData();
+          formData.append('key', API_KEY);
+          formData.append('token', API_TOKEN);
+
+          // Optional: log keys/values for debugging
+          for (let pair of formData.entries()) {
+              console.log(pair[0] + ': ' + pair[1]);
+          }
+
+          $.ajax({
+              url: url,
+              type: "POST",
+              data: formData,
+              processData: false,
+              contentType: false,
+              success: function(data) {
+                  const track = $('#carouselTrack');
+                  track.empty();
+
+                  if (data.rows && Array.isArray(data.rows)) {
+                      data.rows.forEach(function(img) {
+                          // Skip if link is "hidden-category"
+                          if (img.link === "hidden-category") return;
+
+                          track.append(
+                              `<div class="carousel-item">
+                                <img image-id="${img.id}" src="${img.picture}" alt="${img.id}">
+                                <div class="image-title">${img.name}</div>
+                              </div`
+                          );
+                      });
+                  } else {
+                      console.warn("No data.rows found in response");
+                  }
+              },
+              error: function(xhr, status, error) {
+                  console.error("AJAX error:", status, error);
+              }
+          });
       }
       $(document).on('click', '#list-categories li', function () {
             activeCategoryId = $(this).data('id') || '';
@@ -1415,9 +1356,31 @@ border: solid 3px #afa3c2;
           document.getElementById(tabName).style.display = "block";
           evt.currentTarget.className += " active";
         }
-        /*function showImage(i) {
-          mainImage.src = thumbnails[i].src;
-          thumbnails.forEach(img => img.classList.remove('active'));
-          thumbnails[i].classList.add('active');
-        }*/
+
+        const track = document.getElementById('carouselTrack');
+        let currentPageCarousel = 0;
+
+        function moveSlide(direction) {
+          const images = track.querySelectorAll('img');
+          const imagesPerPage = 6;
+
+          if (images.length === 0) return;
+
+          const totalPages = Math.ceil(images.length / imagesPerPage);
+          currentPageCarousel += direction;
+
+          // Wrap around
+          if (currentPageCarousel < 0) currentPageCarousel = totalPages - 1;
+          if (currentPageCarousel >= totalPages) currentPageCarousel = 0;
+
+          const imageWidth = images[0].offsetWidth + 10; // includes gap
+          const offset = imageWidth * imagesPerPage * currentPageCarousel;
+
+          track.style.transform = `translateX(-${offset}px)`;
+        }
+
+        // Optional: refresh position on window resize
+        window.addEventListener('resize', () => {
+          moveSlide(0);
+        });
  </script>
