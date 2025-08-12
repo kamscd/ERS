@@ -1259,12 +1259,9 @@ border: solid 3px #afa3c2;
                 $('#list-products').append(`
                     <div id="${prod.id}" class="product" 
                         data-id="${prod.id}" 
-                        data-vendor="${prod.vendorId}"
-                        data-department="${prod.departmentId}">
-                        <img alt="${prod.name}" src="${prod.coverImageUrl}">
+                        data-category=${prod.categoryId}
+                        <img alt="${prod.name}" src="${prod.imageUrl}">
                         <h4>${prod.name}</h4>
-                        <p>${prod.color} ${prod.description}</p>
-                        <span>$ ${prod.regularPrice}</span>
                     </div>
                 `);
             });
