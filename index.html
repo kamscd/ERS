@@ -1166,7 +1166,7 @@ border: solid 3px #afa3c2;
                 });
             }
             fetchPage(1).done(function (data) {
-                const totalItems = data.length || 0;
+                const totalItems = data.result.length || 0;
                 const pageCount = Math.ceil(totalItems / pageSize);
                 fullProductList = [...data.result];
                 const requests = [];
