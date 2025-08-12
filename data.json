@@ -1,42 +1,41 @@
-[ 
-  {
-    result:[
-      {
-        "id": 1,
-        "categoryId": 0,
-        "name": "Image1",
-        "imageUrl": "https://files.sysers.com/cp/upload/jumpinjoypartyrentals/categories/med/bounce-houses.png"
-      },
-      {
-        "id": 2,
-        "categoryId": 0,
-        "name": "Image2",
-        "imageUrl": "https://files.sysers.com/cp/upload/jumpinjoypartyrentals/categories/med/bounce-houses.png"
-      },
-      {
-        "id": 3,
-        "categoryId": 0,
-        "name": "Image3",
-        "imageUrl": "https://files.sysers.com/cp/upload/jumpinjoypartyrentals/categories/med/bounce-houses.png"
-      },
-      {
-        "id": 4,
-        "categoryId": 0,
-        "name": "Image4",
-        "imageUrl": "https://files.sysers.com/cp/upload/jumpinjoypartyrentals/categories/med/bounce-houses.png"
-      },
-      {
-        "id": 5,
-        "categoryId": 0,
-        "name": "Image5",
-        "imageUrl": "https://files.sysers.com/cp/upload/jumpinjoypartyrentals/categories/med/bounce-houses.png"
-      },
-      {
-        "id": 6,
-        "categoryId": 0,
-        "name": "Image6",
-        "imageUrl": "https://files.sysers.com/cp/upload/jumpinjoypartyrentals/categories/med/bounce-houses.png"
-      }
-    ]
-  }
-]
+
+{
+  "result":[
+    {
+      "id": 1,
+      "categoryId": 0,
+      "name": "Image1",
+      "imageUrl": "https://files.sysers.com/cp/upload/jumpinjoypartyrentals/categories/med/bounce-houses.png"
+    },
+    {
+      "id": 2,
+      "categoryId": 0,
+      "name": "Image2",
+      "imageUrl": "https://files.sysers.com/cp/upload/jumpinjoypartyrentals/categories/med/bounce-houses.png"
+    },
+    {
+      "id": 3,
+      "categoryId": 0,
+      "name": "Image3",
+      "imageUrl": "https://files.sysers.com/cp/upload/jumpinjoypartyrentals/categories/med/bounce-houses.png"
+    },
+    {
+      "id": 4,
+      "categoryId": 0,
+      "name": "Image4",
+      "imageUrl": "https://files.sysers.com/cp/upload/jumpinjoypartyrentals/categories/med/bounce-houses.png"
+    },
+    {
+      "id": 5,
+      "categoryId": 0,
+      "name": "Image5",
+      "imageUrl": "https://files.sysers.com/cp/upload/jumpinjoypartyrentals/categories/med/bounce-houses.png"
+    },
+    {
+      "id": 6,
+      "categoryId": 0,
+      "name": "Image6",
+      "imageUrl": "https://files.sysers.com/cp/upload/jumpinjoypartyrentals/categories/med/bounce-houses.png"
+    }
+  ]
+}
