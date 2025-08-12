@@ -945,7 +945,7 @@ border: solid 3px #afa3c2;
 
          getCategories(API_BASE,API_KEY,API_TOKEN);
          //getBrands(locationID);
-         //getAllProducts(locationID);
+         getAllProducts();
          $('.page-item').on('click', function() {
               alert("Page no:");
               //const page = $(this).data('page');
@@ -1064,6 +1064,8 @@ border: solid 3px #afa3c2;
                 }
             });
         }
+
+      // This Function is to get all available categories from the API that is not set to hidden-category
      function getCategories(API_BASE, API_KEY, API_TOKEN) {
           const url = API_BASE + "/api/read/categories/";
 
@@ -1108,31 +1110,7 @@ border: solid 3px #afa3c2;
               }
           });
       }
-      $(document).on('click', '#list-categories li', function () {
-            activeCategoryId = $(this).data('id') || '';
-            applyFilters();
-            // Optional: highlight the selected category
-            $('#list-categories li').removeClass('active');
-            $(this).addClass('active');
-        });
-      function getBrands(locationID){
-        //alert(itemID);
-        const url = "https://api.welcomemat.com/latest/bridallive/items/categories/"+ locationID;
-        $.ajax({
-                url: url,
-                type: "GET",
-                dataType: "json", // Expected data type from the server
-                success: function(data) {
-                     data.vendors.forEach(function (ven) {
-                          $('#ddl-brands').append(`<option id=${ven.id} value="${ven.id}">${ven.name}</option>`);
-                        });
-                },
-                error: function(xhr, status, error) {
-                    // Handle errors
-                    console.error("AJAX error:", status, error);
-                }
-            });
-      }
+      
         let fullProductList = [];
         let filteredProducts = [];
         let currentPage = 1;
@@ -1174,21 +1152,21 @@ border: solid 3px #afa3c2;
             });
         }*/
         // Fetch all products from all pages
-        function getAllProducts(locationID) {
-            const url = `https://api.welcomemat.com/latest/bridallive/items/${locationID}`;
+        function getAllProducts() {
+            const url = `~/../data.json`;
             fullProductList = [];
             $('#loader').show();
             function fetchPage(p) {
                 return $.ajax({
                     url: url,
-                    type: "POST",
-                    data: JSON.stringify({ status: "A", size: pageSize, page: p }),
+                    type: "GET",
+                    //data: JSON.stringify({ status: "A", size: pageSize, page: p }),
                     contentType: "application/json",
                     dataType: "json"
                 });
             }
             fetchPage(1).done(function (data) {
-                const totalItems = data.total || 0;
+                const totalItems = data.length || 0;
                 const pageCount = Math.ceil(totalItems / pageSize);
                 fullProductList = [...data.result];
                 const requests = [];
@@ -1218,10 +1196,6 @@ border: solid 3px #afa3c2;
             renderPagination(currentPage, Math.ceil(fullProductList.length / pageSize));
             $('#loader').hide();
         }
-        /*function filterByVendorId(vendorId) {
-            const filtered = allProducts.filter(prod => prod.vendorId === vendorId);
-            renderProducts(filtered);
-        }*/
        // Filter by vendor ID
         function filterByVendorId(vendorId) {
             $('#loader').show();
@@ -1266,12 +1240,10 @@ border: solid 3px #afa3c2;
                 $('#list-products').append(`
                     <div id="${prod.id}" class="product" 
                         data-id="${prod.id}" 
-                        data-vendor=${prod.vendorId}
-                        data-department="${prod.departmentId}">
-                        <img alt="${prod.name}" src="${prod.coverImageUrl}">
+                        data-vendor=${prod.categoryId}
+                        <img alt="${prod.name}" src="${prod.imageUrl}">
                         <h4>${prod.name}</h4>
-                        <p>${prod.color} ${prod.description}</p>
-                        <span>$ ${prod.regularPrice}</span>
+                       
                     </div>
                 `);
             });
