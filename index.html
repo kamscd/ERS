@@ -944,8 +944,8 @@ border: solid 3px #afa3c2;
          //alert(API_BASE);
 
          getCategories(API_BASE,API_KEY,API_TOKEN);
-         //getBrands(locationID);
          getAllProducts(API_BASE, API_KEY, API_TOKEN);
+
          $('.page-item').on('click', function() {
               alert("Page no:");
               //const page = $(this).data('page');
@@ -969,12 +969,12 @@ border: solid 3px #afa3c2;
                 e.preventDefault();
                 getProducts(locationID, currentPage + 1);
             });
-            $('#ddl-brands').on('change', function () {
-                const vendorId = $(this).val();
-                activeVendorId = $(this).val();
+            $('#carouselTrack').on('click', function () {
+                const categoryId = $(this).val();
+                activeCategoryId = $(this).val();
                 applyFilters();
-                if (vendorId) {
-                    filterByVendorId(vendorId);
+                if (categoryId) {
+                    filterByCategoryId(categoryId);
                 } else {
                     showAllProducts();
                 }
@@ -1005,9 +1005,8 @@ border: solid 3px #afa3c2;
       });
       $(document).on('click', '.product', function () {
             const id = $(this).data('id');
-            const vendorId = $(this).data('vendor');
-            const departmentId = $(this).data('department');
-            showProduct(id, vendorId, departmentId);
+            const categoryId = $(this).data('category');
+            showProduct(id, categoryId);
         });
       function getInnerDetails(locationID, itemID) {
             const url = `https://api.welcomemat.com/latest/bridallive/items/${locationID}/${itemID}`;
@@ -1095,7 +1094,7 @@ border: solid 3px #afa3c2;
                           if (img.link === "hidden-category") return;
 
                           track.append(
-                              `<div class="carousel-item">
+                              `<div class="carousel-item" item-id="${img.id}">
                                 <img image-id="${img.id}" src="${img.picture}" alt="${img.id}">
                                 <div class="image-title">${img.name}</div>
                               </div`
@@ -1202,9 +1201,9 @@ border: solid 3px #afa3c2;
             $('#loader').hide();
         }
        // Filter by vendor ID
-        function filterByVendorId(vendorId) {
+        function filterByCategoryId(categoryId) {
             $('#loader').show();
-            filteredProducts = fullProductList.filter(prod => String(prod.vendorId) === String(vendorId));
+            filteredProducts = fullProductList.filter(prod => String(prod.categoryid) === String(categoryId));
             currentPage = 1;
             renderPagedProducts(filteredProducts, currentPage);
             renderPagination(currentPage, Math.ceil(filteredProducts.length / pageSize));
@@ -1214,22 +1213,21 @@ border: solid 3px #afa3c2;
             currentPage = 1;
             // 1. Filter
             filteredProducts = fullProductList.filter(prod => {
-                const matchesVendor = !activeVendorId || String(prod.vendorId) === String(activeVendorId);
-                const matchesSearch = !activeSearchText || prod.name.toLowerCase().includes(activeSearchText);
-                const matchesCategory = !activeCategoryId || String(prod.departmentId) === String(activeCategoryId);
+                const matchesSearch = !activeSearchText || prod.display_name.toLowerCase().includes(activeSearchText);
+                const matchesCategory = !activeCategoryId || String(prod.categoryid) === String(activeCategoryId);
                 return matchesVendor && matchesSearch && matchesCategory;
             });
             // 2. Sort
             filteredProducts.sort((a, b) => {
                 switch (activeSortOption) {
                     case 'price-asc':
-                        return parseFloat(a.regularPrice) - parseFloat(b.regularPrice);
+                        return parseFloat(a.cost) - parseFloat(b.cost);
                     case 'price-desc':
-                        return parseFloat(b.regularPrice) - parseFloat(a.regularPrice);
+                        return parseFloat(b.cost) - parseFloat(a.cost);
                     case 'name-asc':
-                        return a.name.localeCompare(b.name);
+                        return a.display_name.localeCompare(b.display_name);
                     case 'name-desc':
-                        return b.name.localeCompare(a.name);
+                        return b.display_name.localeCompare(a.display_name);
                     default:
                         return 0; // no sort
                 }
