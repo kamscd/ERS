@@ -1215,7 +1215,7 @@ border: solid 3px #afa3c2;
             filteredProducts = fullProductList.filter(prod => {
                 const matchesSearch = !activeSearchText || prod.display_name.toLowerCase().includes(activeSearchText);
                 const matchesCategory = !activeCategoryId || String(prod.categoryid) === String(activeCategoryId);
-                return matchesVendor && matchesSearch && matchesCategory;
+                return matchesSearch && matchesCategory;
             });
             // 2. Sort
             filteredProducts.sort((a, b) => {
