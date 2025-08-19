@@ -119,7 +119,7 @@ nav a {
   width: 100%;
 }
 .product {
-  width: 250px;
+  width: 180px;
   text-align: center;
   padding:10px;
   margin: 10px;
@@ -195,7 +195,8 @@ nav a {
       gap: 2rem;
     }
     .image-section {
-      flex: 1 1 50%;
+      flex: 1 1 20%;
+      margin: 20px;
     }
     .main-image {
       width: 100%;
@@ -215,8 +216,36 @@ nav a {
       cursor: pointer;
     }
     .product-info {
-      flex: 1 1 40%;
+      flex: 1 1 60%;
       text-align: left;
+    }
+
+    .product-info label {
+      font-size: 1em;
+      font-weight: 700;
+      color: #aaa;
+    }
+
+    .product-info span {
+      font-size: 1em;
+      font-weight: 700;
+      color: #000;
+    }
+
+    .product-more-details {
+      flex: 1 1 100%;
+      text-align: left;
+    }
+
+    .product-more-details h2,
+    .product-more-details h3,
+    .product-more-details h4 {
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+
+    .product-more-details ul {
+      margin-left: 1em;
     }
     .brand {
       font-size: 0.9rem;
@@ -514,6 +543,10 @@ nav a {
       max-width: 400px;
       position: relative;
     }
+
+    .collapsible-container.lg {
+      max-width: 100%;
+    }
     .collapsible-header {
       display: flex;
       justify-content: space-between;
@@ -765,7 +798,7 @@ nav a {
  <!-- Product List View -->
  <div id="product-list-view">
   <main class="container">
-    
+    <h1>CATEGORIES</h1>
   <div class="carousel-container">
     <div class="carousel-track-wrapper">
       <div class="carousel-track" id="carouselTrack">
@@ -782,7 +815,7 @@ nav a {
     <!-- Filter Search -->
     <div class="filter m-3">
      <div class="collapsible-container">
-      <div class="collapsible-header" onclick="toggleCollapse(this)">
+      <div class="collapsible-header active" onclick="toggleCollapse(this)">
        <span>
         Filter
        </span>
@@ -790,7 +823,7 @@ nav a {
        </div>
       </div>
       <div class="collapsible-content">
-       <input type="text" placeholder="Type to filter" id="txt-search">
+       <input type="text" placeholder="Search products" id="txt-search">
       </div>
      </div>
     </div>
@@ -845,16 +878,16 @@ nav a {
   </div>
  </div>
  <script>
-  function showProduct(productId,vendorId,departmentId) {
-        const locationID = '3d97dcf1';
-      //const productId = productId;
-      //alert(vendorId);
-      //alert(departmentId);
-        getInnerDetails(locationID,productId);
+  function showProduct(productId, categoryId) {
+      //const locationID = '3d97dcf1';
       //alert(productId);
+
+      
+      
       document.getElementById('product-list-view').style.display = 'none';
       document.getElementById('product-detail-view').style.display = 'block';
       // Define a content object dynamically using bracket notation
+
       const content = {};
       content[productId] = `
         <div class="back-button">
@@ -867,72 +900,58 @@ nav a {
               </div>
             </div>
             <div class="product-info">
-              <div class="brand"> <span id="product-brand"></span> -  <span id="product-category"></span> - <span id="product-color"> </span> </div>
               <h1 id="product-name" >ANNE</h1>
-              <div class="price"><strong><span id="product-price-sale"></span></strong> <span style="font-size: 0.9rem; color: #888;">USD</span></div>
-              <div class="price" id="orig-price"><span  id="product-price-orig" style="text-decoration: line-through"></span> <span style="font-size: 0.9rem; color: #888;">USD    (Original Price)</span></div>
-              <div hidden id="product-descr" class="desc">Ethereal beaded & fitted gown with straps in a light and lovely ivory crepe.</div>
-              <div class="options"><strong>AVAILABLE COLORS</strong></div>
-               <div class"option-select" id="list-color">
-               <img hidden class="option-img" src="https://irt-cdn.multiscreensite.com/612903d8e3464cf0aaf1abc3fd131900/dms3rep/multi/dress1.jpg" alt="Thumb1">
-                </div> 
-                <br/>
-                <div class="options"><strong>AVAILABLE SIZES</strong> </div>
-                  <div class="sizes" id="opt-size">
+              <div class="price"><strong><span id="product-price"></span></strong> <span style="font-size: 0.9rem; color: #888;">USD</span></div>
+              
+             
+               <div class="filter m-3">
+                 <div class="collapsible-container">
+                  <div class="collapsible-header active" onclick="toggleCollapse(this)">
+                   <span>
+                    <strong>PRODUCT DETAILS</strong> 
+                   </span>
+                   <div class="chevron">
+                   </div>
                   </div>
-                  <br/>
-                  <div class="options"><strong>AVAILABLE STOCKS</strong></div>
-                   <span id="product-stocks"></span>
-                  <br/>
-                     <div class="filter m-3">
-                         <div class="collapsible-container">
-                          <div class="collapsible-header" onclick="toggleCollapse(this)">
-                           <span>
-                          <strong>DESCRIPTION</strong> 
-                           </span>
-                           <div class="chevron">
-                           </div>
-                          </div>
-                          <div class="collapsible-content">
-                            <p id="product-descr-tab">This is the product description content.</p>
-                          </div>
-                         </div>
-                        </div>
-                       <div class="filter m-3">
-                         <div class="collapsible-container">
-                          <div class="collapsible-header" onclick="toggleCollapse(this)">
-                           <span>
-                          <strong>REVIEWS</strong> 
-                           </span>
-                           <div class="chevron">
-                           </div>
-                          </div>
-                          <div class="collapsible-content">
-                          <p>This product has not been reviewed. Please login to leave the first!</p>
-                          </div>
-                         </div>
-                        </div>
+                  <div class="collapsible-content ">
+                    <label>Actual Size:</label> <span id="product-size"></span>
+                    <br/><br/>
+                    <label>Setup Area:</label> <span id="product-area"></span>
+                    <br/><br/>
+                    <label>Outlets:</label> <span id="product-outlets"></span>
+                    <br/><br/>
+                    <label>Age Group:</label> <span id="product-age-group"></span>
+                    <br/><br/>
+                    <label>Quantity:</label> <span id="product-qty"></span>
+                    <br/><br/>
+                  </div>
+                 </div>
+                </div>
               <div class="sku">SKU: <span id="product-id">14228356</span></div>
+              <br/><br/>
+              <button class="add-cart"> Book Now </button>
             </div>
-          </div>
-         <div class="menu-tabs" hidden>
-              <div class="tab">
-                  <button class="tablinks" onclick="openMenu(event, 'Description')">Description</button>
-                  <button class="tablinks" onclick="openMenu(event, 'Reviews')">Reviews</button>
+
+            <div class="product-more-details m-3">
+                 <div class="collapsible-container lg">
+                  <div class="collapsible-header active" onclick="toggleCollapse(this)">
+                   <span>
+                  <strong>DESCRIPTION</strong> 
+                   </span>
+                   <div class="chevron">
+                   </div>
+                  </div>
+                  <div class="collapsible-content">
+                    <p id="product-descr-tab">This is the product description content.</p>
+                  </div>
+                 </div>
                 </div>
-                <!-- Tab content -->
-                <div id="Description" class="tabcontent">
-                  <p id="product-descr-tab">This is the product description content.</p>
-                </div>
-            </div>
-          <div class="container description" hidden>
-            <div hidden>A sexy classic fit-to-flare with delicate beading on the straps and bodice. Light ivory crepe.</div><br>
-            <div style="margin-top: 1rem;" hidden>
-              <a href="#" style="color: #aa82c5; text-decoration: underline;">Ivory Theory Bridal Size Chart</a>
-            </div>
           </div>
+      
       `;
       document.getElementById('product-detail-content').innerHTML = content[productId];
+
+      getInnerDetails(productId,categoryId);
     }
     function goBack() {
       document.getElementById('product-detail-view').style.display = 'none';
@@ -952,30 +971,6 @@ nav a {
 
          getCategories(API_BASE,API_KEY,API_TOKEN);
          getAllProducts(API_BASE, API_KEY, API_TOKEN);
-
-         $('.page-item').on('click', function() {
-              alert("Page no:");
-              //const page = $(this).data('page');
-              //  alert("Page no:" + page);
-            });
-            // Delegated pagination click events
-            $('#list-paging').on('click', '.page-item', function (e) {
-                e.preventDefault();
-                const selectedPage = parseInt($(this).data('page'));
-                if (!isNaN(selectedPage) && selectedPage !== currentPage) {
-                    getProducts(locationID, selectedPage); // assumes currentLocationID is set
-                }
-            });
-            $('#list-paging').on('click', '.prev:not(.disabled)', function (e) {
-                e.preventDefault();
-                if (currentPage > 1) {
-                    getProducts(locationID, currentPage - 1);
-                }
-            });
-            $('#list-paging').on('click', '.next:not(.disabled)', function (e) {
-                e.preventDefault();
-                getProducts(locationID, currentPage + 1);
-            });
 
             $(document).on('click', '.carousel-item', function () {
                 
@@ -1021,62 +1016,45 @@ nav a {
             const categoryId = $(this).data('category');
             showProduct(id, categoryId);
         });
-      function getInnerDetails(locationID, itemID) {
-            const url = `https://api.welcomemat.com/latest/bridallive/items/${locationID}/${itemID}`;
+
+      // This Function is to get specific details of a selected product
+      function getInnerDetails(itemID,categoryId) {
+
+            const productResult = fullProductList.find(item => item.id.toString() === itemID.toString());
             const fallbackImage = "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg";
-            $.ajax({
-                url: url,
-                type: "GET",
-                dataType: "json",
-                success: function (data) {
-                    // Set text fields
-                    $("#product-name").text(data.name || "N/A");
-                    if (data.salePrice == "" || data.salePrice == null ) {
-                        $("#orig-price").hide();
-                    }
-                    $("#product-price-orig").text(data.regularPrice ? `$${data.regularPrice}` : "Price Unavailable");
-                    $("#product-price-sale").text(data.salePrice ? `$${data.salePrice}` : `$${data.regularPrice}`);
-                    $("#product-descr").text(data.description || "No description.");
-                    $("#product-descr-tab").text(data.description || "No description.");
-                    $("#product-color").text(data.color || "N/A");
-                    $("#product-id").text(data.itemNumber || "N/A");
-                    $("#product-stocks").text(data.quantityInStock || "N/A");
-                    $("#product-brand").text(data.vendorName || "N/A");
-                    $("#product-category").text(data.departmentName || "N/A");
+
+            
+                   $("#product-name").html(productResult?.display_name ?? "N/A");
+                    $("#product-price").html(productResult.cost ? `$${productResult.cost}` : "Price Unavailable");
+                    $("#product-descr-tab").html(productResult.description || "No description.");
+                   
+                    $("#product-size").html(productResult.actual_size || "N/A");
+                    $("#product-area").html(productResult.setup_area || "N/A");
+                    $("#product-qty").html(productResult.qty || "N/A");
+                    $("#product-outlets").html(productResult.outlets || "N/A");
+                    $("#product-age-group").html(productResult.age_group || "N/A");
+
+                    $("#product-id").html(productResult.sku || "N/A");
+
+                    $("#product-category").html(productResult.departmentName || "N/A");
                     // Set main image with fallback
-                    const mainImageUrl = data.additionalImage1;
+                    const mainImageUrl = "https://files.sysers.com/cp/upload/jumpinjoypartyrentals/items/" + productResult.picture;
                     $("#product-main-image").attr("src", mainImageUrl);
-                    // Clear and append size
-                    $("#opt-size").empty();
-                    if (data.size) {
-                        $("#opt-size").append(`<div class="size-option" data-id="${data.size}">${data.size}</div>`);
-                    }
+                    
                     // Clear and append additional images
-                    $("#list-images").empty();
-                    if (Array.isArray(data.pictures)) {
-                        data.pictures.forEach(function (img) {
+                    /*$("#list-images").empty();
+                    if (Array.isArray(productResult.pictures)) {
+                        productResult.pictures.forEach(function (img) {
                             const imageUrl = img.imageUrl || fallbackImage;
                             $("#list-images").append(`
                                 <img src="${imageUrl}"
                                      alt="${img.itemId || 'product image'}">
                             `);
                         });
-                    }
-                    const colorStrings = data.colorString;
-                    const values = colorStrings.split(',');
-                    values.forEach((value, index) => {
-                      console.log(`${index + 1}. ${value}`);
-                      $("#list-color").append(`
-                                <span class="prodcolor">${value} </span>
-                            `);
-                    });
-                },
-                error: function (xhr, status, error) {
-                    console.error("AJAX error:", status, error);
-                }
-            });
+                    }*/
+                
         }
-
+      
       // This Function is to get all available categories from the API that is not set to hidden-category
      function getCategories(API_BASE, API_KEY, API_TOKEN) {
           const url = API_BASE + "/api/read/categories/";
@@ -1131,37 +1109,7 @@ nav a {
         let activeSearchText = '';
         let activeCategoryId = '';
         let activeSortOption = 'default';
-        /*function getProducts(locationID, page = 1) {
-            const url = `https://api.welcomemat.com/latest/bridallive/items/${locationID}`;
-            $.ajax({
-                url: url,
-                type: "POST",
-                data: JSON.stringify({
-                    status: "A",
-                    size: pageSize,
-                    page: page
-                }),
-                contentType: "application/json",
-                dataType: "json",
-                success: function (data) {
-                    const itemsCount = data.total || 0;
-                    const pageCount = Math.ceil(itemsCount / pageSize);
-                    currentPage = page;
-                    $('#label-result-count').text(itemsCount);
-                    allProducts = data.result;
-                    fullProductList = [...fullProductList, ...data.result]; // optional: store for future filtering
-                    if (activeVendorId) {
-                        filterByVendorId(activeVendorId);
-                    } else {
-                        renderProducts(allProducts);
-                    }
-                    renderPagination(currentPage, pageCount);
-                },
-                error: function (xhr, status, error) {
-                    console.error("AJAX error:", status, error);
-                }
-            });
-        }*/
+        
         // Fetch all products from all pages
         function getAllProducts(API_BASE, API_KEY, API_TOKEN) {
             const url = API_BASE + "/api/read/iteminfo/";
@@ -1203,6 +1151,7 @@ nav a {
                 });
             });
         }
+
         // Show all products
         function showAllProducts() {
             $('#loader').show();
@@ -1212,7 +1161,8 @@ nav a {
             renderPagination(currentPage, Math.ceil(fullProductList.length / pageSize));
             $('#loader').hide();
         }
-       // Filter by vendor ID
+        
+       // Filter by Category ID
         function filterByCategoryId(categoryId) {
             $('#loader').show();
             filteredProducts = fullProductList.filter(prod => String(prod.categoryid) === String(categoryId));
